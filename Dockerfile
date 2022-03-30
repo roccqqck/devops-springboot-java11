@@ -9,4 +9,4 @@ FROM adoptopenjdk/openjdk11:ubuntu-jre
 
 COPY --from=BUILD /usr/src/myapp/target/spring-boot-web-0.0.1-SNAPSHOT.jar /app.jar
 # RUN ls /
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["sh", "-c", "java ${JAVA_OPTS} -jar /app.jar ${ARGS}"]
