@@ -14,7 +14,7 @@ cd devops-springboot-java11
 
 Build: ```docker image build -f Dockerfile -t roccqqck:springboot .```
 
-Run: ```docker container run -it -p 8080:8080 roccqqck:springboot```
+Run: ```docker container run -it -p 8080:8080 -e JAVA_OPTS=Xmx512m -e ARGS=--server.port=8081  roccqqck:springboot```
 
 
 
